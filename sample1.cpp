@@ -9,15 +9,12 @@ class Info
 
     void getDetails()
     {
-        while (true)
-        {
-        cout<<endl<<"Enter ID: ";
+        cout<<"Enter ID: ";
         cin>>id;
         cout<<endl<<"Total Balance : "<<balance<<endl;
         cout<<endl<<" 1: Check Balance";
         cout<<endl<<" 2: Withdraw";
         cout<<endl<<" 3: Deposit"<<endl;
-        cout<<endl<<" 4: Exit"<<endl;
         cout<<"Select an option: "<<endl;
         cin>>o;
 
@@ -52,12 +49,7 @@ class Info
 
        default:
         break;
-
-        case 4:
-        cout<<"Exiting..."<<endl;
-        return;
        }
-    }
     }
 
 };
