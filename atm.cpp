@@ -5,6 +5,7 @@ class Info
     string id;
     double balance=25000;
     int withdraw,deposite,o;
+
     public:
 
     void getDetails()
@@ -16,7 +17,7 @@ class Info
         cout<<endl<<"Total Balance : "<<balance<<endl;
         cout<<endl<<" 1: Check Balance";
         cout<<endl<<" 2: Withdraw";
-        cout<<endl<<" 3: Deposit"<<endl;
+        cout<<endl<<" 3: Deposit";
         cout<<endl<<" 4: Exit"<<endl;
         cout<<"Select an option: "<<endl;
         cin>>o;

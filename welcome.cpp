@@ -32,9 +32,9 @@ class Students
     }
     void display()
     {
-        cout<<endl<<"Name"<<name;
-        cout<<endl<<"Roll no."<<roll;
-        cout<<endl<<"Marks"<<marks;
+        cout<<endl<<"Name :"<<name;
+        cout<<endl<<"Roll no :"<<roll;
+        cout<<endl<<"Marks :"<<marks;
     }
     int getRoll()
     {
@@ -64,10 +64,94 @@ int main()
         {
             case 1:
             {
-                cout<<endl<<"Enter number of students";
+                cout<<endl<<"Enter number of students :";
                 cin>>n;
-                
+                for(int i=0;i<n;i++)
+                {
+                    s1[i].getDetails();
+                }
             }
+            break;
+
+            case 2:
+            {
+                for(int i=0;i<n;i++)
+                {
+                    s1[i].display();
+                }
+            }
+            break;
+
+            case 3:
+            {
+                cout<<endl<<"Enter roll number to find student: ";
+                cin>>x;
+                bool found=false;
+                for(int i=0;i<n;i++)
+                {
+                    if(s1[i].getRoll()==x)
+                    {
+                        s1[i].display();
+                        found=true;
+                        break;
+                    }
+                }
+                    if(! found)
+                    {
+                        cout<<endl<<"Student not found"<<endl;
+                    }
+            }
+            break;
+            
+            case 4:
+            {
+                cout<<endl<<"Enter roll number to edit student: ";
+                cin>>x;
+                bool found=false;
+                for(int i=0;i<n;i++)
+                {
+                    if(s1[i].getRoll()==x)
+                    {
+                        s1[i].getDetails();
+                        found=true;
+                        break;
+                    }
+                }
+                if(! found)
+                {
+                    cout<<endl<<"Student not found"<<endl;
+                }
+            }
+            break;
+
+            case 5:
+            {
+                cout<<endl<<"Enter roll number to delete student: ";
+                cin>>x;
+                bool found=false;
+                for(int i=0;i<n;i++)
+                {
+                    if(s1[i].getRoll()==x)
+                    {
+                        for(int j=i;j<n-1;j++)
+                        {
+                            s1[j]=s1[j+1];
+                        }
+                        n--;
+                        found=true;
+                        cout<<"Student deleted Succesfully "<<endl;
+                        break;
+                    }
+                }
+                if(!found)
+                {
+                    cout<<endl<<"Student not found"<<endl;
+                }
+            }
+            break;
+
+            default:
+                cout<<"Invalid choice! Please try again ."<<endl;
         }
 
     }
